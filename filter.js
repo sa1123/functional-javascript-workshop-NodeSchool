@@ -1,9 +1,13 @@
 function getShortMessages(messages){
-    return messages.filter(function(words){
-       return words.message.length < 50;
-    }).map(function(word){
-        return word.message
-    });
+    const result =  messages.filter(function(words){
+       if(words.message.length < 50){
+            return words.message;
+       }
+    }).map(function(item){
+        return item.message;
+    })
+
+    return(result);
 }
 
 module.exports = getShortMessages;
